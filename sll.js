@@ -39,11 +39,31 @@ class SLL{
 
     removeFront(){
         if (this.head == null){
-            return null
+            return console.log("null")
         }
         else{
             var runner = this.head;
             this.head = runner.next;
+        }
+        return this
+    }
+
+    listNode(value){
+        var count = 1;
+        if(this.head == null){
+            console.log("List is empty");
+            return this
+        }
+        else{
+            var runner = this.head;
+            while(runner != null){
+                if(runner.value == value){
+                    console.log(`Value is found in node ${count}`);
+                    return this
+                }
+                runner = runner.next;
+                count++;
+            }
         }
         return this
     }
@@ -61,4 +81,4 @@ class SLL{
 }
 
 var sll = new SLL();
-sll.newNode(6).newNode(7).newNode(8).newNode(9).addFront(12).addFront(15).addFront(16).removeFront().print();
+sll.newNode(1).newNode(2).newNode(3).newNode(4).newNode(5).addFront(6).addFront(7).addFront(8).removeFront().listNode(3).print();
