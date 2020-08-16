@@ -94,6 +94,20 @@ class SLL{
         return this
     }
 
+    avgNode(){
+        var count = 1;
+        var sum = 0;
+        var runner = this.head;
+        while(runner != null){
+            sum = sum + runner.value;
+            runner = runner.next;
+            count++;
+        }
+        var avg = (sum/count);
+        console.log(`The AVERAGE of all the node VALUES is ${avg}`);
+        return this
+    }
+
     print(){
         if(this.head){
             var runner = this.head;
@@ -107,4 +121,4 @@ class SLL{
 }
 
 var sll = new SLL();
-sll.newNode(1).newNode(2).newNode(3).newNode(4).newNode(5).addFront(6).addFront(7).addFront(8).removeFront().listNode(3).maxNode().minNode().print();
+sll.newNode(1).newNode(2).newNode(3).newNode(4).newNode(5).addFront(6).addFront(7).addFront(8).removeFront().listNode(3).maxNode().minNode().avgNode().print();
