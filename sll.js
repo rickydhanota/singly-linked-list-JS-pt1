@@ -81,6 +81,19 @@ class SLL{
         return this
     }
 
+    minNode(){
+        var runner = this.head;
+        var min = runner.value;
+        while(runner != null){
+            if(min>runner.value){
+                min = runner.value;
+            }
+            runner = runner.next;
+        }
+        console.log(`The MIN value node is ${min}`);
+        return this
+    }
+
     print(){
         if(this.head){
             var runner = this.head;
@@ -94,4 +107,4 @@ class SLL{
 }
 
 var sll = new SLL();
-sll.newNode(1).newNode(2).newNode(3).newNode(4).newNode(5).addFront(6).addFront(7).addFront(8).removeFront().listNode(3).maxNode().print();
+sll.newNode(1).newNode(2).newNode(3).newNode(4).newNode(5).addFront(6).addFront(7).addFront(8).removeFront().listNode(3).maxNode().minNode().print();
