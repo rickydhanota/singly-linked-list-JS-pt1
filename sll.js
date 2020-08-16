@@ -27,12 +27,23 @@ class SLL{
 
     addFront(value){
         if (this.head == null){
-            this.head  = new Node(value);
+            this.head = new Node(value);
         }
         else{
             var runner = this.head;
             this.head = new Node(value);
             this.head.next = runner;
+        }
+        return this
+    }
+
+    removeFront(){
+        if (this.head == null){
+            return null
+        }
+        else{
+            var runner = this.head;
+            this.head = runner.next;
         }
         return this
     }
@@ -50,4 +61,4 @@ class SLL{
 }
 
 var sll = new SLL();
-sll.newNode(6).newNode(7).newNode(8).newNode(9).addFront(12).print();
+sll.newNode(6).newNode(7).newNode(8).newNode(9).addFront(12).addFront(15).addFront(16).removeFront().print();
