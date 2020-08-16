@@ -6,32 +6,49 @@ class Node{
 }
 
 class SLL{
-    constructor(value){
+    constructor(){
         this.head = null;
+    }
+
+    newNode(value){
+        var addNode = new Node(value);
+        if (this.head){
+            var runner = this.head;
+            while(runner.next != null){
+                runner = runner.next;
+            }
+            runner.next = addNode;
+        }
+        else{
+            this.head = addNode;
+        }
+        return this
     }
 
     addFront(value){
         if (this.head == null){
             this.head  = new Node(value);
-            return this;
+            return this
         }
         else{
             var runner = this.head;
             this.head == new Node(value);
             this.head.next = runner;
-            return this;
+            return this
         }
     }
 
     print(){
-        var runner  = this.head;
-        while (runner != null){
-            console.log(runner.value);
-            runner = runner.next;
+        if(this.head){
+            var runner = this.head;
+            while (runner != null){
+                console.log(runner.value);
+                runner = runner.next;
+            }
         }
-        return this;
+        return this
     }
 }
 
 var sll = new SLL();
-sll.addFront(12).print();
+sll.newNode(6).newNode(7).newNode(8).newNode(9).print();
