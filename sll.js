@@ -28,14 +28,13 @@ class SLL{
     addFront(value){
         if (this.head == null){
             this.head  = new Node(value);
-            return this
         }
         else{
             var runner = this.head;
-            this.head == new Node(value);
+            this.head = new Node(value);
             this.head.next = runner;
-            return this
         }
+        return this
     }
 
     print(){
@@ -51,4 +50,4 @@ class SLL{
 }
 
 var sll = new SLL();
-sll.newNode(6).newNode(7).newNode(8).newNode(9).print();
+sll.newNode(6).newNode(7).newNode(8).newNode(9).addFront(12).print();
